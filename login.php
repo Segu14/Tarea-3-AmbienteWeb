@@ -1,17 +1,7 @@
 <?php
 
-$servername = "localhost";
-$username = "root";
-$password = "";
-$databse = "practica3";
+include("config.php");
 
-$conn = new mysqli ($servername, $username, $password, $databse);
-
-if ($conn->connect_error) {
-    die("Error de Conexión");
-}
-echo "<script>console.log('"."Conexión exitosa"."');</script>";
-// En la consola de nuestro se imprimirá este mensaje si la conexión al usuario XAMPP y la BD fueron exitosos.
 ?>
 
 <!DOCTYPE html>
@@ -28,37 +18,35 @@ echo "<script>console.log('"."Conexión exitosa"."');</script>";
   </head>
 
   <body>
+    
     <div class="container">
       <div class="wrapper">
         <div class="title"><span>Realiza tu Reserva</span></div>
-        <form action="#">
+
+        <form method="POST" action="insert.php">
 
           <div class="row"> <!-- input de tipo texto en el que el cliente podrá ingresar su nombre. -->
             <i class="fas fa-user"></i>
-            <input type="text" placeholder="Nombre Completo" required>
-          </div>
-
-          <div class="row"> <!-- input de tipo password en el que el cliente podrá ingresar su contraseña oculta. -->
-            <i class="fas fa-lock"></i>
-            <input type="password" placeholder="Contraseña" required>
+            <input type="text" name="name" placeholder="Nombre Completo" required>
           </div>
 
           <div class="row">
             <i class="fas fa-at"></i> <!-- input de tipo email en el que el cliente podrá ingresar su correo.
                                            El programa lo obliga a utilizar @ para guardar los datos. -->
-            <input type="email" placeholder="Correo Electrónico" required>
+            <input type="email" name="email" placeholder="Correo Electrónico" required>
           </div>
 
           <div class="row">
             <i class="far fa-calendar-alt"></i> <!-- input de tipo texto, una vez se interactúe con él, se revela que es
                                                      un tipo date enmascarado, para que el cliente ingrese la fecha de su "cita" -->
-            <input type="text" placeholder="Fecha para la Cita" onfocus="this.type='date'" onblur="this.type='text'" required>
+            <input type="text" name="fecha" placeholder="Fecha para la Cita" 
+                onfocus="this.type='date'" onblur="this.type='text'" required>
           </div>
 
           <div class="row">
             <i class="fas fa-comment-dots"></i> <!-- input de tipo texto en el que el cliente PUEDE dar un mensaje que acompañe
                                                      a la reserva. No es obligatorio así que no lleva REQUIERED -->  
-            <input type="text" placeholder="Mensaje Adicional">
+            <input type="text" name="mensaje" placeholder="Mensaje Adicional">
           </div>
 
           <div class="row button">
@@ -66,6 +54,7 @@ echo "<script>console.log('"."Conexión exitosa"."');</script>";
           </div>
           
         </form>
+
       </div>
     </div>
 
