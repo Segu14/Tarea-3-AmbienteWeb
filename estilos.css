@@ -16,7 +16,15 @@ body{
   max-width: 440px;
   padding: 0 20px;
   margin: 170px auto;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 50%;
+  /* Estos estilos nos ayudan a centrar el formulario en el sitio mantiendo el factor responsive */
 }
+
 .wrapper{
   width: 100%;
   background: #fff;
@@ -54,11 +62,11 @@ body{
 }
 form .row input:focus{
   border-color: #16a085;
-  box-shadow: inset 0px 0px 2px 2px rgba(26,188,156,0.25);
 }
 form .row input::placeholder{
   color: #999;
 }
+
 .wrapper form .row i{
   position: absolute;
   width: 47px;
@@ -94,16 +102,4 @@ form .row input::placeholder{
 }
 form .button input:hover{
   background: #12876f;
-}
-.wrapper form .signup-link{
-  text-align: center;
-  margin-top: 20px;
-  font-size: 17px;
-}
-.wrapper form .signup-link a{
-  color: #16a085;
-  text-decoration: none;
-}
-form .signup-link a:hover{
-  text-decoration: underline;
 }
