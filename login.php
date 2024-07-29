@@ -17,7 +17,7 @@ include("config.php");
     <!-- la librería font-awesome nos da los iconos para los cuadros de texto, una forma de hacer un diseño más limpio y legible -->
   </head>
 
-  <body>
+  <body class=body_login>
     
     <div class="container">
       <div class="wrapper">

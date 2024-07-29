@@ -11,9 +11,9 @@ $sql = "INSERT INTO reservas(name, email, fecha, mensaje) VALUES ('$name','$emai
  
 if($conn->query($sql) === TRUE){
     echo "<script>console.log('"."Insertado correctamente"."');</script>";
+    header("Location: gracias.html");
 } else {
     echo "Error al insertar"."<br>";
-    include("gracias.html");
 }
 
 ?>
